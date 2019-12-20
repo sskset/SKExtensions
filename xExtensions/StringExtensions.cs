@@ -11,7 +11,7 @@ namespace xExtensions
                 return true;
             }
 
-            return source.Length == 0;
+            return source.Length != 0;
         }
 
         public static bool IsNotNullOrEmpty(this string source)
