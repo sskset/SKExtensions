@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace xExtensions
+namespace NExtensions
 {
     public static class StringExtensions
     {
