@@ -19,6 +19,8 @@ steps:
     version: '2.2.x'
     packageType: runtime
 
+- script: echo $PWD
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
