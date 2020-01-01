@@ -4,27 +4,33 @@
 # https://aka.ms/yaml
 
 trigger:
-- develop
+- master
 
 pool:
-  vmImage: 'windows-latest'
-
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'x86|x64|ARM'
-  buildConfiguration: 'Release'
-  appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
+  vmImage: 'ubuntu-16.04'
 
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+- task: UseDotNet@2
   inputs:
-    restoreSolution: '$(solution)'
+    version: '3.0.x'
 
-- task: VSBuild@1
+- task: UseDotNet@2
   inputs:
-    platform: 'x86'
-    solution: '$(solution)'
-    configuration: '$(buildConfiguration)'
-    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+    version: '2.2.x'
+    packageType: runtime
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**.*.csproj'
+    arguments: '--configuration Release --collect "Code coverage"'
+
+- script: dotnet test --logger trx
+
+- task: PublishTestResults@2
+  condition: suddeededOrFailed()
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
+
