@@ -29,7 +29,7 @@ steps:
 - script: dotnet test --logger trx
 
 - task: PublishTestResults@2
-  condition: succeedOrFailed()
+  condition: succeededOrFailed()
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
