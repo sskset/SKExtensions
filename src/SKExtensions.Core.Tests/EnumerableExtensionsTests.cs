@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using Xunit;
-using NExtensions;
+using SKExtensions.Core;
 
-namespace NExtensionCore.Tests
+namespace NExtensions.Core.Tests
 {
     public class EnumerableExtensionsTests
     {

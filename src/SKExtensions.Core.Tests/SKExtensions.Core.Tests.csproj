@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NExtensions\NExtensions.csproj" />
+    <ProjectReference Include="..\SKExtensions.Core\SKExtensions.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 using Xunit;
-using NExtensions;
+using SKExtensions.Core;
 
-namespace NExtensionCore.Tests
+namespace SKExtensions.Core.Tests
 {
     public class StringExtensionsTests
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections;
 
-namespace NExtensions
+namespace SKExtensions.Core
 {
     public static class EnumerableExtensions
     {

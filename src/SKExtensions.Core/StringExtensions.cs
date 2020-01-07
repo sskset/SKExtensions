@@ -1,4 +1,4 @@
-﻿namespace NExtensions
+﻿namespace SKExtensions.Core
 {
     public static class StringExtensions
     {
