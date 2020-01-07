@@ -1,7 +1,8 @@
 using System;
 using Xunit;
+using NExtensions;
 
-namespace xExtensions.Tests
+namespace NExtensionCore.Tests
 {
     public class StringExtensionsTests
     {
@@ -9,6 +10,7 @@ namespace xExtensions.Tests
         public void Given_Null_WhenCall_IsNullOrEmpty_ShouldReturn_True()
         {
             string str = null;
+<<<<<<< develop:xExtensions.Tests/StringExtensionsTests.cs
 
             Assert.True(str.IsNullOrEmpty());
         }
@@ -25,6 +27,15 @@ namespace xExtensions.Tests
         {
             string str = "     ";
             Assert.True(str.IsNullOrEmpty());
+=======
+            Assert.True(str.IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void Given_Empty_WhenCall_IsNullOrEmpty_ShouldReturn_True()
+        {
+            Assert.True(string.Empty.IsNullOrEmpty());
+>>>>>>> rename projects:NExtensionCore.Tests/StringExtensionsTests.cs
         }
     }
 }
