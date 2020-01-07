@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NExtensions
+﻿namespace NExtensions
 {
     public static class StringExtensions
     {
